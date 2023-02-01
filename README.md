@@ -15,7 +15,7 @@ Output
 
 ## Config
 
-Create `.dev.env` file
+Create `.env` file
 
 ```bash
 # APP CONFIG
