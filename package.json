@@ -1,6 +1,6 @@
 {
   "name": "chuckle",
-  "version": "1.0b",
+  "version": "1.0.1b",
   "description": "chuckle is a meme generator on discord",
   "main": "./src/index.js",
   "scripts": {
