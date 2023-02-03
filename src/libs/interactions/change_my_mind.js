@@ -1,5 +1,5 @@
-const { SlashCommandBuilder } = require("discord.js");
-const { grasapiURL } = require('../config');
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const { grasapiURL, MainColor } = require('../config');
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -10,8 +10,16 @@ module.exports = {
       .setDescription('Specify the parameters that your image will carry.')
       .setRequired(true)),
   async execute(interaction) {
-    const text = interaction.options.get('text').value;
-    texto = text.replace(/ /g, "%20");
-    await interaction.reply(`${grasapiURL}change_my_mind/?text=${texto}`)
+    const Text = interaction.options.get('text').value;
+    TextWithoutSpaces = Text.replace(/ /g, "%20");
+
+    const meme = new EmbedBuilder()
+    meme.setColor(MainColor)
+    meme.setAuthor({ name: `Requested by ${interaction.user.username}`, iconURL: interaction.user.avatarURL() })
+    meme.setImage(`${grasapiURL}change_my_mind/?text=${TextWithoutSpaces}`)
+    meme.setTimestamp()
+    meme.setFooter({ text: "Change My Mind Meme", iconURL: interaction.guild.iconURL() })
+
+    await interaction.reply({embeds: [meme]})
   }
 }
