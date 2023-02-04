@@ -22,7 +22,6 @@ module.exports = {
       url: DiscordInviteLink
     })
     info.setFooter({ text: "Bot info", iconURL: interaction.guild.iconURL() })
-  
     await interaction.reply({embeds: [info]})
   }
 }
