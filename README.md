@@ -41,7 +41,7 @@ pnpm start
 
  - [x] Download the meme and send it, not send it directly and have Discord render it.
  - [x] Pass the sending of commands to Embeds
- - [ ] Help command for displaying available memes
+ - [x] Help command for displaying available memes
  - [x] Information command to display bot information
     
 ## Tech Stack
