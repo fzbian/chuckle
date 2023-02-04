@@ -1,6 +1,6 @@
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const logger = require('./libs/logger')
-const { discordToken } = require('./libs/config');
+const { DiscordToken } = require('./libs/config');
 const { ready, interactionCreate, messageCreate, } = require('./libs/events');
 const initializeInteractions = require('./libs/interactions/init/initializeInteractions');
 
@@ -21,6 +21,6 @@ client.commands = new Collection();
     client.on('messageCreate', messageCreate);
 
     logger.info('Authenticating with Discord');
-    await client.login(discordToken);
+    await client.login(DiscordToken);
     logger.info('Completed Discord authentication');
 })();

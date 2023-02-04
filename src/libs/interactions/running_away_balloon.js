@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
-const { grasapiURL, MainColor } = require('../config');
+const { GrasapiURL, MainColor } = require('../config');
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -22,7 +22,7 @@ module.exports = {
     const meme = new EmbedBuilder()
     meme.setColor(MainColor)
     meme.setAuthor({ name: `Requested by ${interaction.user.username}`, iconURL: interaction.user.avatarURL() })
-    meme.setImage(`${grasapiURL}running_away_balloon/?text1=${TextWithoutSpaces1}&text2=${TextWithoutSpaces2}`)
+    meme.setImage(`${GrasapiURL}running_away_balloon/?text1=${TextWithoutSpaces1}&text2=${TextWithoutSpaces2}`)
     meme.setTimestamp()
     meme.setFooter({ text: "Running Away Balloon Meme", iconURL: interaction.guild.iconURL() })
   

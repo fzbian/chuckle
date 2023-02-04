@@ -3,9 +3,11 @@ const dotenv = require('dotenv');
 dotenv.config({ path: `.env`});
 
 module.exports = {
-  discordToken: process.env.DISCORD_TOKEN,
-  discordClientId: process.env.CLIENT_ID,
-  shouldCreateCommands: process.env.SHOULD_CREATE_COMMANDS === 'true',
-  grasapiURL: process.env.GRASAPI_URL,
+  DiscordToken: process.env.DISCORD_TOKEN,
+  DiscordClientId: process.env.CLIENT_ID,
+  DiscordInviteLink: `https://discord.com/oauth2/authorize?client_id=${this.DiscordClientId}&scope=bot&permissions=274877959168`,
+  BotName: process.env.BOT_NAME,
+  ShouldCreateCommands: process.env.SHOULD_CREATE_COMMANDS === 'true',
+  GrasapiURL: process.env.GRASAPI_URL,
   MainColor: process.env.MAIN_COLOR
 };

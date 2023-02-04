@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
-const { grasapiURL, MainColor } = require('../config');
+const { GrasapiURL, MainColor } = require('../config');
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -34,7 +34,7 @@ module.exports = {
     const meme = new EmbedBuilder()
     meme.setColor(MainColor)
     meme.setAuthor({ name: `Requested by ${interaction.user.username}`, iconURL: interaction.user.avatarURL() })
-    meme.setImage(`${grasapiURL}expanding_brain/?text1=${TextWithoutSpaces1}&text2=${TextWithoutSpaces2}&text3=${TextWithoutSpaces3}&text4=${TextWithoutSpaces4}`)
+    meme.setImage(`${GrasapiURL}expanding_brain/?text1=${TextWithoutSpaces1}&text2=${TextWithoutSpaces2}&text3=${TextWithoutSpaces3}&text4=${TextWithoutSpaces4}`)
     meme.setTimestamp()
     meme.setFooter({ text: "Expanding Brain Meme", iconURL: interaction.guild.iconURL() })
   

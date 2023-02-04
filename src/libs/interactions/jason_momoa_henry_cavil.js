@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
-const { grasapiURL, MainColor } = require('../config');
+const { GrasapiURL, MainColor } = require('../config');
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -22,7 +22,7 @@ module.exports = {
     const meme = new EmbedBuilder()
     meme.setColor(MainColor)
     meme.setAuthor({ name: `Requested by ${interaction.user.username}`, iconURL: interaction.user.avatarURL() })
-    meme.setImage(`${grasapiURL}jason_momoa_henry_cavil/?text1=${TextWithoutSpaces1}&text2=${TextWithoutSpaces2}`)
+    meme.setImage(`${GrasapiURL}jason_momoa_henry_cavil/?text1=${TextWithoutSpaces1}&text2=${TextWithoutSpaces2}`)
     meme.setTimestamp()
     meme.setFooter({ text: "Jason Momoa Henry Cavil Meme", iconURL: interaction.guild.iconURL() })
   
