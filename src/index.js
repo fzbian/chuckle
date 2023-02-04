@@ -1,7 +1,7 @@
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const logger = require('./libs/logger')
 const { DiscordToken } = require('./libs/config');
-const { ready, interactionCreate, messageCreate, } = require('./libs/events');
+const { ready, interactionCreate, messageCreate, guildCreate, guildDelete } = require('./libs/events');
 const initializeInteractions = require('./libs/interactions/init/initializeInteractions');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
@@ -17,6 +17,8 @@ client.commands = new Collection();
     });
 
     client.on('ready', ready);
+    client.on('guildCreate', guildCreate);
+    client.on('guildDelete', guildDelete)
     client.on('interactionCreate', interactionCreate);
     client.on('messageCreate', messageCreate);
 

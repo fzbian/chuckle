@@ -10,7 +10,6 @@ module.exports = {
   BotName: process.env.BOT_NAME,
   ShouldCreateCommands: process.env.SHOULD_CREATE_COMMANDS === 'true',
   GrasapiURL: process.env.GRASAPI_URL,
-  MainColor: process.env.MAIN_COLOR
   MainColor: process.env.MAIN_COLOR,
   DiscordInviteLink: DiscordInviteLink
 };
