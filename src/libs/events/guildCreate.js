@@ -1,5 +1,19 @@
-const logger = require('../logger');
+const { EmbedBuilder } = require("discord.js");
+const { LoggerChannel, GreenColor } = require('../config');
 
 module.exports = async (guild) => {
-    logger.info(`Bot added to ${guild.name} (${guild.id}), with ${guild.memberCount} members`)
+    const channel = guild.client.channels.cache.get(LoggerChannel);
+
+    const logger = new EmbedBuilder()
+    logger.setColor(GreenColor)
+    logger.setTitle("Bot added")
+    logger.addFields(
+		{ name: 'Name', value: `${guild.name}`, inline: true },
+        { name: 'ID', value: `${guild.id}`, inline: true  },
+        { name: 'Members', value: `${guild.memberCount}`, inline: true  },
+        { name: 'Owner ID', value: `${guild.ownerId}`, inline: true  },
+	)
+    logger.setThumbnail(guild.iconURL())
+    logger.setFooter({ text: "Logger", iconURL: guild.iconURL() })
+    channel.send({embeds: [logger]})
 };
