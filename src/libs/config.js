@@ -16,5 +16,6 @@ module.exports = {
   RedColor: process.env.RED_COLOR,
   MovementChannel: process.env.MOVEMENT_CHANNEL,
   InteractionChannel: process.env.INTERACTION_CHANNEL,
+  DeveloperID: process.env.DEVELOPER,
   DiscordInviteLink: DiscordInviteLink
 };
