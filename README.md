@@ -20,11 +20,14 @@ Create `.env` file
 ```bash
 # APP CONFIG
 
-BOT_NAME=
-DISCORD_TOKEN=
-CLIENT_ID=
+BOT_NAME=Chuckle
 SHOULD_CREATE_COMMANDS=true
 GRASAPI_URL=https://grasapi.fzbian.me/api/
+
+# TOKENS
+
+DISCORD_TOKEN=
+CLIENT_ID=
 
 # COLORS
 MAIN_COLOR=de8723
@@ -34,6 +37,9 @@ RED_COLOR=d41c1c
 # CHANNELS
 MOVEMENT_CHANNEL=
 INTERACTION_CHANNEL=
+
+# USERS
+DEVELOPER=
 ```
 
 ## Installation
