@@ -11,5 +11,10 @@ module.exports = {
   ShouldCreateCommands: process.env.SHOULD_CREATE_COMMANDS === 'true',
   GrasapiURL: process.env.GRASAPI_URL,
   MainColor: process.env.MAIN_COLOR,
+  LoggerChannel: process.env.LOGGER_CHANNEL_ID,
+  GreenColor: process.env.GREEN_COLOR,
+  RedColor: process.env.RED_COLOR,
+  MovementChannel: process.env.MOVEMENT_CHANNEL,
+  InteractionChannel: process.env.INTERACTION_CHANNEL,
   DiscordInviteLink: DiscordInviteLink
 };

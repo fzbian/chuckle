@@ -18,12 +18,22 @@ Output
 Create `.env` file
 
 ```bash
+# APP CONFIG
+
 BOT_NAME=
 DISCORD_TOKEN=
 CLIENT_ID=
-SHOULD_CREATE_COMMANDS=
+SHOULD_CREATE_COMMANDS=true
 GRASAPI_URL=https://grasapi.fzbian.me/api/
-MAIN_COLOR=
+
+# COLORS
+MAIN_COLOR=de8723
+GREEN_COLOR=1cd44d
+RED_COLOR=d41c1c
+
+# CHANNELS
+MOVEMENT_CHANNEL=
+INTERACTION_CHANNEL=
 ```
 
 ## Installation
@@ -37,13 +47,6 @@ cd chuckle
 pnpm start
 ```
 
-## To-do
-
- - [x] Download the meme and send it, not send it directly and have Discord render it.
- - [x] Pass the sending of commands to Embeds
- - [x] Help command for displaying available memes
- - [x] Information command to display bot information
-    
 ## Tech Stack
 
  - Discord.js
