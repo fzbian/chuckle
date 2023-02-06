@@ -1,8 +1,8 @@
 const { EmbedBuilder } = require("discord.js");
-const { LoggerChannel, RedColor } = require('../config');
+const { MovementChannel, RedColor } = require('../config');
 
 module.exports = async (guild) => {
-    const channel = guild.client.channels.cache.get(LoggerChannel);
+    const channel = guild.client.channels.cache.get(MovementChannel);
 
     const logger = new EmbedBuilder()
     logger.setColor(RedColor)

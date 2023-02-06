@@ -1,9 +1,9 @@
 const { EmbedBuilder } = require("discord.js");
-const { LoggerChannel, MainColor } = require('../config');
+const { InteractionChannel, MainColor } = require('../config');
 
 module.exports = (e) => {
     if (e.interaction && e.interaction.user) {
-        const channel = e.client.channels.cache.get(LoggerChannel);
+        const channel = e.client.channels.cache.get(InteractionChannel);
 
         const logger = new EmbedBuilder()
         logger.setColor(MainColor)

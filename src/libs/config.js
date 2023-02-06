@@ -14,5 +14,7 @@ module.exports = {
   LoggerChannel: process.env.LOGGER_CHANNEL_ID,
   GreenColor: process.env.GREEN_COLOR,
   RedColor: process.env.RED_COLOR,
+  MovementChannel: process.env.MOVEMENT_CHANNEL,
+  InteractionChannel: process.env.INTERACTION_CHANNEL,
   DiscordInviteLink: DiscordInviteLink
 };
