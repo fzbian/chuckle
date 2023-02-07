@@ -1,10 +1,10 @@
 {
   "name": "chuckle",
-  "version": "1.5",
+  "version": "1.6",
   "description": "chuckle is a meme generator on discord",
   "main": "./src/index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=dev nodemon src/index.js | pino-pretty -i pid,hostname -t yyyy-mm-dd HH:MM:ss"
+    "start": "nodemon src/index.js | pino-pretty -i pid,hostname -t yyyy-mm-dd HH:MM:ss"
   },
   "author": "Fabian Martin",
   "license": "ISC",

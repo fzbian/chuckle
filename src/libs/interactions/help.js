@@ -1,35 +1,75 @@
-const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
-const { MainColor, DiscordInviteLink, BotName } = require('../config');
+const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
+const { MainColor, DiscordInviteLink, BotName, DeveloperID } = require('../config');
 
 module.exports = {
   data: new SlashCommandBuilder()
-  .setName('help')
-  .setDescription('Displays bot commands.'),
+    .setName('help')
+    .setDescription('Displays bot commands.'),
   async execute(interaction) {
+    const Buttons = new ActionRowBuilder()
+    Buttons.addComponents(
+      new ButtonBuilder()
+        .setLabel('Invite me!')
+        .setURL(DiscordInviteLink)
+        .setStyle(ButtonStyle.Link),
+    );
 
-    const info = new EmbedBuilder()
-    info.setTitle(`${BotName} | Available commands`)
-    info.setColor(MainColor)
-    info.setAuthor({ name: `Requested by ${interaction.user.username}`, iconURL: interaction.user.avatarURL() })
-    info.setTimestamp()
-    .addFields(
-      { name: 'change_my_mind', value: '`text`' },
-      { name: 'disappointed_black_guy', value: '`text1`, `text2`' },
-      { name: 'distracted_boyfriend', value: '`text1`, `text2`, `text3`' },
-      { name: 'drake', value: '`text1`, `text2`' },
-      { name: 'expanding_brain', value: '`text1`, `text2`, `text3`, `text4`' },
-      { name: 'jason_momoa_henry_cavil', value: '`text1`, `text2`' },
-      { name: 'left_right', value: '`text1`, `text2`' },
-      { name: 'spiderman', value: '`text1`, `text2`' },
-      { name: 'running_away_balloon', value:'`text1`, `text2`, `text3`' },
-      { name: 'three_headed_dragon', value: '`text1`, `text2`, `text3`' },
-      { name: 'this_is', value: '`url`' },
-      { name: 'spiderman', value: '`text1`, `text2`' },
-      { name: 'grim_reaper_knocking_door', value: '`url1`, `url2`, `url3`, `url4`' },
+    const Info = new EmbedBuilder();
+    Info.setAuthor({
+      name: `Information and commands available | ${BotName}`,
+    });
+    Info.addFields(
+      {
+        name: "Memes available",
+        value: "`change_my_mind`, `disappointed_black_guy`,  `distracted_boyfriend`, `drake` , `expanding_brain`, `jason_momoa_henry_cavil`, `left_right`, `running_away_balloon`, `spiderman`, `this_is`,  `three_headed_dragon`, `undertaker`, `grim_reaper_knocking_door`, `zoolander`.",
+      },
+      {
+        name: "Useful commands",
+        value: "`help`, `info`, `memes`, `suggest`",
+      },
+      {
+        name: "Bot information",
+        value: "**- Server**: Oxta.Cloud\n**- Library**: discord.js\n**- Developer**: fzbian#9210 (github.com/fzbian)",
+      },
+    );
+    Info.setColor(MainColor);
+    Info.setFooter({
+      text: `${BotName}`,
+    });
+    Info.setTimestamp();
 
-    )
-    info.setFooter({ text: "Bot commands", iconURL: interaction.guild.iconURL() })
-  
-    await interaction.reply({embeds: [info]})
+    const DevInfo = new EmbedBuilder();
+    DevInfo.setAuthor({
+      name: `Information and commands available | ${BotName}`,
+    });
+    DevInfo.addFields(
+      {
+        name: "Memes available",
+        value: "`change_my_mind`, `disappointed_black_guy`,  `distracted_boyfriend`, `drake` , `expanding_brain`, `jason_momoa_henry_cavil`, `left_right`, `running_away_balloon`, `spiderman`, `this_is`,  `three_headed_dragon`, `undertaker`, `grim_reaper_knocking_door`, `zoolander`.",
+      },
+      {
+        name: "Useful commands",
+        value: "`help`, `info`, `memes`, `suggest`",
+      },
+      {
+        name: "Bot information",
+        value: "**- Server**: Oxta.Cloud\n**- Library**: discord.js\n**- Developer**: fzbian#9210 (github.com/fzbian)",
+      },
+      {
+        name: "Developer bot information",
+        value: `**- Servers**: ${interaction.client.guilds.cache.size}`,
+      },
+    );
+    DevInfo.setColor(MainColor);
+    DevInfo.setFooter({
+      text: `${BotName}`,
+    });
+    DevInfo.setTimestamp();
+
+    if (interaction.user.id == DeveloperID) {
+      await interaction.reply({ embeds: [DevInfo], components: [Buttons] })
+    } else {
+      await interaction.reply({ embeds: [Info], components: [Buttons] })
+    }
   }
 }

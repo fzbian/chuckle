@@ -3,8 +3,8 @@ const { MainColor, DiscordInviteLink, BotName, DeveloperID } = require('../confi
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('info')
-    .setDescription('Displays bot information.'),
+    .setName('memes')
+    .setDescription('Displays memes available.'),
   async execute(interaction) {
     const Buttons = new ActionRowBuilder()
     Buttons.addComponents(
@@ -73,5 +73,3 @@ module.exports = {
     }
   }
 }
-
-

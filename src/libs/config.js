@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 dotenv.config({ path: `.env`});
 
 var DiscordInviteLink = `https://discord.com/oauth2/authorize?client_id=${process.env.CLIENT_ID}&scope=bot&permissions=274877959168`;
+var FooterMeme = `Use /memes to see the other available memes`;
 
 module.exports = {
   DiscordToken: process.env.DISCORD_TOKEN,
@@ -16,5 +17,8 @@ module.exports = {
   RedColor: process.env.RED_COLOR,
   MovementChannel: process.env.MOVEMENT_CHANNEL,
   InteractionChannel: process.env.INTERACTION_CHANNEL,
+  SuggestChannel: process.env.SUGGEST_CHANNEL,
+  DeveloperID: process.env.DEVELOPER,
+  FooterMeme: FooterMeme,
   DiscordInviteLink: DiscordInviteLink
 };
